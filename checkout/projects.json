@@ -1,0 +1,53 @@
+{
+	"projects" : [
+			{
+				"url" : "https://github.com/ubimix/org.ubimix.poms.bundle.git",
+				"name" : "org.ubimix.poms.bundle"
+			},
+			{
+				"url" : "https://github.com/ubimix/org.ubimix.commons.events.git",
+				"name" : "org.ubimix.commons.events"
+			},
+            {
+                "url" : "https://github.com/ubimix/org.ubimix.commons.graph.git",
+                "name" : "org.ubimix.commons.graph"
+            },
+
+
+          {
+                "url" : "https://github.com/ubimix/org.ubimix.commons.rpc.git",
+                "name" : "org.ubimix.commons.rpc"
+            },
+
+          {
+                "url" : "https://github.com/ubimix/org.ubimix.commons.json.git",
+                "name" : "org.ubimix.commons.json"
+            },
+
+
+			{
+				"url" : "https://github.com/ubimix/org.ubimix.commons.iterator.git",
+				"name" : "org.ubimix.commons.iterator"
+			},
+			{
+				"url" : "https://github.com/ubimix/org.ubimix.commons.osgi.git",
+				"name" : "org.ubimix.commons.osgi"
+			},
+			{
+				"url" : "https://github.com/ubimix/org.ubimix.commons.strings.git",
+				"name" : "org.ubimix.commons.strings"
+			},
+			{
+				"url" : "https://github.com/ubimix/org.ubimix.commons.uri.git",
+				"name" : "org.ubimix.commons.uri"
+			},
+			{
+				"url" : "https://github.com/ubimix/org.ubimix.commons.utils.git",
+				"name" : "org.ubimix.commons.utils"
+			},
+			{
+				"url" : "https://github.com/ubimix/org.ubimix.libs.httpclient.git",
+				"name" : "org.ubimix.libs.httpclient"
+			}
+     ]
+}

@@ -1,0 +1,114 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+    xmlns="http://maven.apache.org/POM/4.0.0"
+    xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/maven-v4_0_0.xsd">
+    <modelVersion>4.0.0</modelVersion>
+    <groupId>org.jokerd.init</groupId>
+    <artifactId>org.jokerd.init.checkout</artifactId>
+    <name>${project.artifactId}</name>
+    <version>1.2.1</version>
+    <packaging>pom</packaging>
+    <properties>
+        <workspaceDir>../../org.jokerd.projects</workspaceDir>
+        <projectListFile>${project.basedir}/projects.json</projectListFile>
+        <pomTemplateFile>${project.basedir}/pom-template.xml</pomTemplateFile>
+    </properties>
+    <build>
+        <plugins>
+            <plugin>
+                <groupId>org.codehaus.gmaven</groupId>
+                <artifactId>gmaven-plugin</artifactId>
+                <version>1.4</version>
+                <executions>
+                    <execution>
+                        <phase>validate</phase>
+                        <goals>
+                            <goal>execute</goal>
+                        </goals>
+                        <configuration>
+                            <source><![CDATA[
+                                import net.minidev.json.*;
+                                
+                                JSONObject readJSON(File file) {
+                                    java.io.Reader reader = file.newReader();
+                                    try {
+                                        JSONObject descr = JSONValue.parse( reader );
+                                        return descr;
+                                    } finally {
+                                        reader.close();
+                                    }
+                                }
+                                void clone(String url, File dir) {
+                                    dir.getParentFile().mkdirs();
+                                    String command = "git clone $url"
+                                    if (dir != null) {
+                                         command += " $dir"
+                                    } 
+
+                                    println("==========================");
+                                    println("Clone '" + url + "'" );
+                                    println("Dir  '" + dir + "'");
+
+                                    def proc = command.execute();
+                                    proc.waitFor();
+                                    if (proc.exitValue() != 0) {
+                                        println("ERROR!");
+                                        println("return code: ${proc.exitValue()}")
+                                        println("stderr: ${proc.err.text}")
+                                        println("stdout: ${proc.in.text}")
+                                    } else {
+                                        println("OK");
+                                    }
+                                }
+                                
+                                String workspaceDirName = project.properties.workspaceDir;
+                                workspaceDirName = workspaceDirName.replace('\\', '/');
+                                File workspaceDir;
+                                if (workspaceDirName.startsWith("/")) {
+                                    workspaceDir = new File(workspaceDirName);
+                                } else {
+                                    workspaceDir = new File(project.basedir, workspaceDirName);
+                                }
+                                workspaceDir = workspaceDir.getCanonicalFile();
+ 
+                                String projectListFile = project.properties.projectListFile;
+                                File file = new File(projectListFile);
+                                JSONObject descr = readJSON(file);
+                                JSONArray array = descr.get("projects");
+                                def content = new StringBuilder();
+                                for (JSONAware value : array) {
+                                    if (value instanceof JSONObject) {
+                                        JSONObject gitProject = (JSONObject) value;
+                                        String url = gitProject.get("url");
+                                        String name = gitProject.get("name");
+                                        File dir = name != null ? new File(workspaceDir, name) : null;
+                                        clone(url, dir);
+                                        content.append("        <module>").append(name).append("</module>\n");
+                                    }
+                                }
+                                // Create a POM file
+                                String pomTemplateFileName = project.properties.pomTemplateFile
+                                File pomTemplateFile = new File(pomTemplateFileName);
+                                String pomContent = pomTemplateFile.getText();
+                                String timestamp = "" + System.currentTimeMillis();
+                                pomContent = pomContent.replace("\$MODULES\$", content.toString()).replace("\$VERSION\$", timestamp);
+                                File pomFile = new File(workspaceDir, "pom.xml");
+                                pomFile.setText(pomContent);
+                                
+                                println "A new POM file was created in the $workspaceDir directory.";
+                                // println pomContent;
+                            ]]></source>
+                        </configuration>
+                    </execution>
+                </executions>
+            </plugin>
+        </plugins>
+    </build>
+    <dependencies>
+        <dependency>
+            <groupId>net.minidev</groupId>
+            <artifactId>json-smart</artifactId>
+            <version>1.1.1</version>
+        </dependency>
+    </dependencies>
+</project>
