@@ -1,4 +1,4 @@
-= Ubimix projects =
+= Socios OpenSocial project =
 
 This project contains Maven configuration files used to checkout all projects
 from remote repositories, build and install them. This configuration 

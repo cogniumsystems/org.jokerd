@@ -12,19 +12,14 @@
                 "url" : "https://github.com/ubimix/org.ubimix.commons.graph.git",
                 "name" : "org.ubimix.commons.graph"
             },
-
-
-          {
+            {
                 "url" : "https://github.com/ubimix/org.ubimix.commons.rpc.git",
                 "name" : "org.ubimix.commons.rpc"
             },
-
-          {
+            {
                 "url" : "https://github.com/ubimix/org.ubimix.commons.json.git",
                 "name" : "org.ubimix.commons.json"
             },
-
-
 			{
 				"url" : "https://github.com/ubimix/org.ubimix.commons.iterator.git",
 				"name" : "org.ubimix.commons.iterator"
@@ -48,6 +43,38 @@
 			{
 				"url" : "https://github.com/ubimix/org.ubimix.libs.httpclient.git",
 				"name" : "org.ubimix.libs.httpclient"
-			}
+			},
+            {
+                "url" : "https://github.com/cogniumsystems/org.jokerd.opensocial.api",
+                "name" : "org.jokerd.opensocial.api"
+            },
+            {
+                "url" : "https://github.com/cogniumsystems/org.jokerd.opensocial.base",
+                "name" : "org.jokerd.opensocial.base"
+            },
+            {
+                "url" : "https://github.com/cogniumsystems/org.jokerd.opensocial.facebook",
+                "name" : "org.jokerd.opensocial.facebook"
+            },
+            {
+                "url" : "https://github.com/cogniumsystems/org.jokerd.opensocial.feeds",
+                "name" : "org.jokerd.opensocial.feeds"
+            },
+            {
+                "url" : "https://github.com/cogniumsystems/org.jokerd.opensocial.oauth",
+                "name" : "org.jokerd.opensocial.oauth"
+            },
+            {
+                "url" : "https://github.com/cogniumsystems/org.jokerd.opensocial.store",
+                "name" : "org.jokerd.opensocial.store"
+            },
+            {
+                "url" : "https://github.com/cogniumsystems/org.jokerd.opensocial.twitter",
+                "name" : "org.jokerd.opensocial.twitter"
+            },
+            {
+                "url" : "https://github.com/cogniumsystems/org.jokerd.sandbox.tests",
+                "name" : "org.jokerd.sandbox.tests"
+            }
      ]
 }
