@@ -1,8 +1,8 @@
-Socios OpenSocial
-=================
+Socios OpenSocial API extension
+================================
 
 This project implements a set of OpenSocial wrappers for existing social
-networks and common data sources like RSS feeds, e-mails.
+networks and common data sources like RSS feeds, e-mails. It has been developed as a part of the EU Socios project: http://www.sociosproject.eu
 
 The main idea is to provide a common access to heterogeneous social
 content sources. It translates native social network structures into
