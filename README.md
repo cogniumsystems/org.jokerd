@@ -1,8 +1,8 @@
-Socios OpenSocial API extension
+Socios OpenSocial API wrappers
 ================================
 
 This project implements a set of OpenSocial wrappers for existing social
-networks and common data sources like RSS feeds, e-mails. It has been developed as a part of the EU Socios project: http://www.sociosproject.eu
+networks and common data sources like RSS/Atom feeds and e-mails. It has been developed as a part of the EU Socios project: http://www.sociosproject.eu
 
 The main idea is to provide a common access to heterogeneous social
 content sources. It translates native social network structures into
@@ -19,3 +19,5 @@ stream mode
 - a set of generic utility libraries : a scheduler for fetching data
 periodically, a set of cursors for manipulating, grouping or odering
 flexibly data by various criteria (type, time, author, etc.)
+
+The code is available under the Apache License: http://www.apache.org/licenses/LICENSE-2.0.html.
