@@ -2,7 +2,8 @@ Socios OpenSocial API wrappers
 ================================
 
 This project implements a set of OpenSocial wrappers for existing social
-networks and common data sources like RSS/Atom feeds and e-mails. It has been developed as a part of the EU Socios project: http://www.sociosproject.eu
+networks (so far only Twitter and Facebook, Google+ is in progress) and common data sources like 
+RSS/Atom feeds and e-mails. It has been developed as a part of the EU Socios project: http://www.sociosproject.eu
 
 The main idea is to provide a common access to heterogeneous social
 content sources. It translates native social network structures into
