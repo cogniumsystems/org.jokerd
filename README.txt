@@ -1,8 +1,8 @@
-Socios OpenSocial
-=================
+Socios OpenSocial wrappers
+===========================
 
-This project implements a set of OpenSocial wrappers for existing social
-networks and common data sources like RSS feeds, e-mails. 
+This project implements a set of OpenSocial wrappers for existing social networks 
+(so far only Twitter and Facebook, Google+ is in progress) and common data sources like RSS/Atom feeds and e-mails. 
 It has been developed as a part of the EU Socios project: http://www.sociosproject.eu .
 
 The main idea is to provide a common access to heterogeneous social
@@ -20,3 +20,5 @@ stream mode
 - a set of generic utility libraries : a scheduler for fetching data
 periodically, a set of cursors for manipulating, grouping or odering
 flexibly data by various criteria (type, time, author, etc.)
+
+The code is available under the Apache License: http://www.apache.org/licenses/LICENSE-2.0.html.
