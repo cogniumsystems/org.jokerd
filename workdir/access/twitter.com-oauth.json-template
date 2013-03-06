@@ -1,0 +1,6 @@
+{
+    "name": "Twitter",
+    "callbackUri": "http://localhost:8080/oauth_callback/",
+    "consumerKey": "r9g7JuxbpyaRjEEsGbNxg",
+    "consumerSecret": "ZfSkX1k5LH3dvj32LsWufUYZpSj7DmMvgp9JdKZcMI4"
+}

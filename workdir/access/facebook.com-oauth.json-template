@@ -1,0 +1,6 @@
+{
+    "name": "Facebook",
+    "callbackUri": "http://localhost:8080/oauth_callback/",
+    "consumerKey": "168322056606289",
+    "consumerSecret": "5f024c743540ff7227b18ac0354c1949"
+}
